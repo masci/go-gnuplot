@@ -28,10 +28,8 @@ func init() {
 	var err error
 	g_gnuplot_cmd, err = exec.LookPath("gnuplot")
 	if err != nil {
-		fmt.Printf("** could not find path to 'gnuplot':\n%v\n", err)
-		panic("could not find 'gnuplot'")
+		fmt.Println("Warning! Plots won't work:", err)
 	}
-	fmt.Printf("-- found gnuplot command: %s\n", g_gnuplot_cmd)
 }
 
 type gnuplot_error struct {
